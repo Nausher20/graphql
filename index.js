@@ -1,15 +1,17 @@
 const { ApolloServer } = require('apollo-server');
-const typeDefs = require('./src/book');
-const resolvers = require('./src/bookResolver');
-const resolvers = require('./src/bookschema');
-
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  introspection: true,
-  playground: true
+const mongoose=require('mongoose');
+const typeDefs = require('./src/typedefs');  
+const resolvers = require('./src/resolvers'); 
+const MONGODB="mongodb://localhost:27017/";
+const server =new ApolloServer({ typeDefs,resolvers});
+mongoose.connect(MONGODB,{UseNewUrlParser:true}).then(()=>{
+  console.log("MongoDb connection successful");
+  return server.listen({port:5000});
+}).then((res)=>{
+ console.log('Server running at ${res.url}');
 });
 
-server.listen({ port: 4000 }).then(({ url }) => {
-  console.log(`Server ready at ${url}`);
-});
+
+
+
+
