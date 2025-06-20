@@ -1,4 +1,4 @@
-const Recipe = require('./Recipe');
+const Recipe = require('../RecipeSchema/Recipe');
 
 const resolvers = {
   Query: {

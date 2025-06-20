@@ -3,7 +3,7 @@ const { gql } = require('apollo-server');
 const typeDefs = gql`
   type Recipe {
     id: ID!
-    title: String!
+    title: String
     description: String
   }
 
