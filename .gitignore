@@ -1,40 +1,38 @@
-# Ignore Node.js dependencies
+# === Ignore root-level package files ===
+/package.json
+/package-lock.json
+
+# === Ignore node_modules everywhere ===
 node_modules/
 src/Client/node_modules/
 
-# Ignore environment variables
+# === Ignore environment variables ===
 .env
 
-# Ignore build output
+# === Ignore build output ===
 .next/
 dist/
 out/
+src/Client/.next/
+src/Client/out/
 
-# Ignore logs
+# === Ignore lib folder in client (often auto-generated) ===
+src/Client/lib/
+
+# === Ignore logs ===
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Ignore OS-specific files
+# === OS-specific files ===
 .DS_Store
 Thumbs.db
 
-# Ignore IDE/editor files
+# === Editor/IDE folders ===
 .vscode/
 .idea/
 
-# Ignore lock files if preferred (optional, but not recommended)
-# package-lock.json
-# yarn.lock
-
-# Optional: ignore test coverage or reports
+# === Optional test/coverage files ===
 coverage/
 *.lcov
-
-# Ignore client and server build artifacts
-src/Client/.next/
-src/Client/out/
-
-# Ignore lib folder in client (usually build output)
-src/Client/lib/
